@@ -1,3 +1,4 @@
+```
 1. Syntax Parser
 2. Lexical Environment
 3. Execution Context
@@ -240,7 +241,7 @@ eg:
 		
 // Adding jQuery support
 ```
-	
+```	
 
 ## Questions
 1. What would the below code print?
