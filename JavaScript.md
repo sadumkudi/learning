@@ -1,5 +1,5 @@
 
-# Local storage in JavaScript
+### Local storage in JavaScript
 localStorage
 ```
 localStorage.setItem('student', stObjToString);
