@@ -15,7 +15,7 @@
 	const stObjToString = JSON.stringify(student);
 	const stJSON = JSON.parse(stObjToString) // to convert the string back to JSON
 	
-# Classes and Objects:
+# Classes and Objects
 class User{
     constructor(firstname, lastname, credit){
         this.firstname = firstname;
@@ -37,5 +37,7 @@ const john = new User('John', 'Anderson', 34);
 console.log(john.getFullName());
 john.editName('Alex Sam');
 console.log(john.getFullName());
+
+# Inheritance and method overriding
 	
 
