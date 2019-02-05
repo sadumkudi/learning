@@ -16,7 +16,7 @@ Convert an object into a string to be stored in local storage
 	const stJSON = JSON.parse(stObjToString) // to convert the string back to JSON 
 	
 	
-# Classes and Objects
+#### Classes and Objects
 ```
 class User{
     constructor(firstname, lastname, credit){
