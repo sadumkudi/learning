@@ -6,7 +6,6 @@
 	
 # Parsing JSON and STRINGIFY
 - convert an object into a string to be stored in local storage
-
 	const student = {
 		name: 'john',
 		age: 23,
