@@ -9,7 +9,7 @@ var stord = localStorage.getItem('student');
 # Parsing JSON and STRINGIFY
 Convert an object into a string to be stored in local storage
 	
-	```
+	
 	const student = {
 		name: 'john',
 		age: 23,
@@ -17,9 +17,10 @@ Convert an object into a string to be stored in local storage
 	}
 	const stObjToString = JSON.stringify(student);
 	const stJSON = JSON.parse(stObjToString) // to convert the string back to JSON 
-	```
+	
 	
 # Classes and Objects
+```
 class User{
     constructor(firstname, lastname, credit){
         this.firstname = firstname;
@@ -49,5 +50,5 @@ class Teacher extends User{
         this.subject = subject;
     }
 }
-	
+```	
 
