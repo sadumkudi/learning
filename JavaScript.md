@@ -5,11 +5,8 @@ localStorage
 localStorage.setItem('student', stObjToString);
 var stord = localStorage.getItem('student');
 ```
-	
-# Parsing JSON and STRINGIFY
+# Parsing JSON and Stringify
 Convert an object into a string to be stored in local storage
-	
-	
 	const student = {
 		name: 'john',
 		age: 23,
@@ -38,7 +35,6 @@ class User{
 }    
 
 const john = new User('John', 'Anderson', 34);
-//console.log(john);
 console.log(john.getFullName());
 john.editName('Alex Sam');
 console.log(john.getFullName());
