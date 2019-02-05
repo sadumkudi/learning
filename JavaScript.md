@@ -25,9 +25,17 @@ class User{
     getFullName(){
         return `${this.firstname} ${this.lastname} is my fullname`;
     }
-}
+    editName(newname){
+        const myname = newname.split(' ');
+        this.firstname = myname[0];
+        this.lastname = myname[1];
+    }
+}    
 
 const john = new User('John', 'Anderson', 34);
+//console.log(john);
+console.log(john.getFullName());
+john.editName('Alex Sam');
 console.log(john.getFullName());
 	
 
