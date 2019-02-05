@@ -1,11 +1,11 @@
 
-### Local storage in JavaScript
+## Local storage in JavaScript
 localStorage
 ```
 localStorage.setItem('student', stObjToString);
 var stord = localStorage.getItem('student');
 ```
-### Parsing JSON and Stringify
+## Parsing JSON and Stringify
 Convert an object into a string to be stored in local storage
 	const student = {
 		name: 'john',
@@ -15,7 +15,7 @@ Convert an object into a string to be stored in local storage
 	const stObjToString = JSON.stringify(student);
 	const stJSON = JSON.parse(stObjToString) // to convert the string back to JSON 
 
-### Classes and Objects
+## Classes and Objects
 ```
 class User{
     constructor(firstname, lastname, credit){
