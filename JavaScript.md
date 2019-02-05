@@ -9,10 +9,10 @@ var stord = localStorage.getItem('student');
 Convert an object into a string to be stored in local storage
 ```
 const student = {
-    name: 'john',
-    age: 23,
-		isActive: true,
-	}
+	name: 'john',
+	age: 23,
+	isActive: true,
+}
 const stObjToString = JSON.stringify(student);
 const stJSON = JSON.parse(stObjToString) // to convert the string back to JSON 
 ```
