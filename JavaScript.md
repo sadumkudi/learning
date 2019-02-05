@@ -42,8 +42,10 @@ const john = new User('John', 'Anderson', 34);
 console.log(john.getFullName());
 john.editName('Alex Sam');
 console.log(john.getFullName());
+```
 
 # Inheritance and method overriding
+```
 class Teacher extends User{
     constructor (firstname, lastname, credit, subject){
         super(firstname, lastname, credit);
