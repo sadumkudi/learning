@@ -16,5 +16,18 @@
 	const stJSON = JSON.parse(stObjToString) // to convert the string back to JSON
 	
 # Classes and Objects:
+class User{
+    constructor(firstname, lastname, credit){
+        this.firstname = firstname;
+        this.lastname  = lastname;
+        this.credit   = credit;
+    }
+    getFullName(){
+        return `${this.firstname} ${this.lastname} is my fullname`;
+    }
+}
+
+const john = new User('John', 'Anderson', 34);
+console.log(john.getFullName());
 	
 
