@@ -2,6 +2,7 @@
 # Local storage in JavaScript
 - localStorage
 	localStorage.setItem('student', stObjToString);
+	
 	var stored = localStorage.getItem('student');
 	
 # Parsing JSON and STRINGIFY
