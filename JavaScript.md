@@ -1,8 +1,8 @@
 
 # Local storage in JavaScript
-- localStorage
+localStorage
 localStorage.setItem('student', stObjToString);
-var stored = localStorage.getItem('student');
+var stord = localStorage.getItem('student');
 	
 # Parsing JSON and STRINGIFY
 - convert an object into a string to be stored in local storage
