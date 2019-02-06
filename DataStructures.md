@@ -1,6 +1,7 @@
 ## Algorithms
 - Euclids's algorithm
 ```
+# Find gcd of two numbers m, n
 def gcd(m,n):
     if m < n:
         (m,n) = (n,m)
