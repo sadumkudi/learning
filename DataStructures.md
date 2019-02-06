@@ -8,7 +8,8 @@ def gcd(m,n):
     if (m%n) == 0:
         return(n)
     else:
-        return (gcd( max(n, m-n), min(n, m-n)))
+        # return (gcd( max(n, m-n), min(n, m-n)))
+        return (gcd(n, m-n))
   ```  
 
 
