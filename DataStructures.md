@@ -1,4 +1,5 @@
-- datastructures
+## Algorithms
+- Euclids's algorith
 
 
 
