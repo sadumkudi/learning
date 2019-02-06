@@ -9,6 +9,7 @@ print (list(set(list1) & set(list2)))
 
 
 ## Links
+* https://docs.python.org/3/tutorial/index.html
 * Dive into Python 3, Mark Pilgrim
 http://www.diveintopython3.net/
 * Think Python, 2nd Edition, Allen B. Downey
