@@ -3,8 +3,8 @@
 - slicing of strings
 - concatenating strings
 
-##### int vs float
-- division always produces a float
+##### Types
+- int vs float: division always produces a float
 - boolean: True/False (not, and, or)
 - comparisons: ==, !=, <=, >=
 
