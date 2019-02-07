@@ -14,7 +14,7 @@
 - for mutable values, assignment does not make a fresh copy
 - How can we make a copy of a list: take a full slice - list1[:]
 - list1 == list2 (two different list with same values)
-- list2 is list3 ( list2 points to list3)
+- list2 is list3 ( list2 and list3 point to same object)
   
 
 
