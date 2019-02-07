@@ -17,7 +17,7 @@
 - list2 is list3 ( list2 and list3 refer to same object)
 - concatenation(+) always produces a new list  
 - numeric 0 is False, empty sequence "", [], is False - everything else is True
-
+- loops: for i in [1,2,3,4]:
 
 
 ## Links
