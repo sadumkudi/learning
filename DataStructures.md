@@ -1,5 +1,5 @@
 ## Algorithms
-- Euclids's algorithm
+- Euclid's algorithm
 ```
 # Find gcd of two numbers m, n
 def gcd(m,n):
