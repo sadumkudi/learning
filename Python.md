@@ -1,12 +1,12 @@
-##### Strings
-- strings are immutable
-- slicing of strings
-- concatenating strings
 
-##### Types
+##### Types of values
+- strings are immutable, slicing of strings, concatenating strings
 - int vs float: division always produces a float
-- boolean: True/False (not, and, or)
+- boolean: True/False {not, and, or}
 - comparisons: ==, !=, <=, >=
+- Lists: 
+  - sequence of values, need not be uniform
+  - extract values by position, can be sliced
 
 
 
