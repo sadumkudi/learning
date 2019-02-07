@@ -4,6 +4,8 @@ list1 = [8, 6, 10, 1, 2]
 list2 = [5, 6, 2, 55, 99]
 print (list(set(list1) & set(list2))) 
 ```
+##### Strings
+- strings are immutable
 - slicing of strings
 - concatenating strings
 
