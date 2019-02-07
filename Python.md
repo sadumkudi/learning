@@ -12,7 +12,7 @@
   - lists are mutable
 - for immutable values, assignment makes a fresh copy of a value
 - for mutable values, assignment does not make a fresh copy
-- 
+- How can we make a copy of a list: use slice - list1[0:len(list1)]
   
 
 
