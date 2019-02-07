@@ -15,7 +15,7 @@
 - How can we make a copy of a list: take a full slice - list1[:]
 - list1 == list2 (two different list with same values)
 - list2 is list3 ( list2 and list3 refer to same object)
-  
+- concatenation(+) always produces a new list  
 
 
 
