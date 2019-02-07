@@ -3,6 +3,8 @@
 - slicing of strings
 - concatenating strings
 
+##### int vs float
+
 
 
 
