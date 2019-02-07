@@ -5,7 +5,8 @@
 
 ##### int vs float
 - division always produces a float
-- boolean: True/False
+- boolean: True/False (not, and, or)
+- comparisons: ==, !=, <=, >=
 
 
 
