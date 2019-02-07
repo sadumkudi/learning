@@ -10,8 +10,9 @@
   - for lists, a single position returns a value, slice returns a list
   - list can contain other lists - nesting
   - lists are mutable
-  - for immutable values, assignment makes a fresh copy of a value
-  - for mutable values, assignment does not make a fresh copy
+- for immutable values, assignment makes a fresh copy of a value
+- for mutable values, assignment does not make a fresh copy
+- 
   
 
 
