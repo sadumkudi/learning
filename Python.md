@@ -4,7 +4,8 @@
 - concatenating strings
 
 ##### int vs float
-
+- division always produces a float
+- boolean: True/False
 
 
 
