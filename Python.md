@@ -21,6 +21,35 @@ vdo 10: https://www.youtube.com/watch?v=J_Cw3G5v460&index=10&list=PL3pGy4HtqwD02
 - loops: for i in [1,2,3,4]:
 - functions:
   - passing values - mutable and immutable
+  
+  
+  
+  ```
+# find all prime numbers upto n
+def factors(n):
+    fl =[];
+    for i in range(1, n+1):
+        if n%i == 0:
+            fl = fl + [i]
+    return (fl)    
+
+def isprime(n):
+    return(factors(n) == [1,n])
+
+def findprime(n):
+    primelist = []
+    for i in range(1, n+1):
+        if isprime(i):
+            primelist = primelist + [i]
+    return primelist 
+
+print(findprime(10))
+```
+  
+  
+  
+  
+  
 
 ## Links
 * https://docs.python.org/3/tutorial/index.html
