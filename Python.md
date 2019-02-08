@@ -24,7 +24,8 @@ vdo 10: https://www.youtube.com/watch?v=J_Cw3G5v460&index=10&list=PL3pGy4HtqwD02
   
   
   
-  ```
+ 
+ ```
 # find all prime numbers upto n
 def factors(n):
     fl =[];
