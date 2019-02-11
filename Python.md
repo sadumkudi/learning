@@ -26,7 +26,8 @@ vdo 12: https://www.youtube.com/watch?v=J_Cw3G5v460&index=10&list=PL3pGy4HtqwD02
   - passing values - mutable and immutable
 - range:
   - range(i, j), range(j), range(i,j,k)
-  
+ 
+ #### Array vs List
   
   
  
