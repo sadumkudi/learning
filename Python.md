@@ -27,7 +27,11 @@ vdo 12: https://www.youtube.com/watch?v=J_Cw3G5v460&index=10&list=PL3pGy4HtqwD02
 - range:
   - range(i, j), range(j), range(i,j,k)
  
- #### Array vs List
+ ##### Array vs List
+ - Array
+    - Single block of memory, elements of uniform type, indexing is fast - constant i, inserting in b/w is expensive
+ - List
+    - Values scattered in memory, each element points to the next - linked list, flexible size, accessing cost is proportional to i, inserting or deleting an element is easy
   
   
  
