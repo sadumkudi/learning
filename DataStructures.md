@@ -10,6 +10,8 @@ def gcd(m,n):
     else:
         return (gcd(n, m%n))
   ```  
+- Binary Search - O(log n)
+
 ## Notes
 ```
 # Find the intersection of two list
