@@ -11,6 +11,8 @@ vdo 12: https://www.youtube.com/watch?v=J_Cw3G5v460&index=10&list=PL3pGy4HtqwD02
   - for lists, a single position returns a value, slice returns a list
   - list can contain other lists - nesting
   - lists are mutable
+  - list.append(x)
+  - list.extend(list2)
 - for immutable values, assignment makes a fresh copy of a value
 - for mutable values, assignment does not make a fresh copy
 - How can we make a copy of a list: take a full slice - list1[:]
