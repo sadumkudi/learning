@@ -5,7 +5,7 @@ vdo 12: https://www.youtube.com/watch?v=J_Cw3G5v460&index=10&list=PL3pGy4HtqwD02
 - int vs float: division always produces a float
 - boolean: True/False {not, and, or}
 - comparisons: ==, !=, <=, >=
-- Lists: 
+- List: 
   - sequence of values, need not be uniform
   - extract values by position, can be sliced
   - for lists, a single position returns a value, slice returns a list
