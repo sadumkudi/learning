@@ -21,6 +21,12 @@ print (list(set(list1) & set(list2)))
 ```
 ## Efficiency 
 - measures time taken by an algorithm as a function T(n) with respect to input size n
+- worst case efficiency - when value is not found
+- BigO notation
+- Linear scan is O(n) for arrays and lists
+- binary search - O(log n) for sorted arrays
+- Polynomial time algorithm
+
 
 
 ## Links
