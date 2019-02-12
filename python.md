@@ -1,5 +1,5 @@
 
-vdo 15: https://www.youtube.com/watch?v=J_Cw3G5v460&index=10&list=PL3pGy4HtqwD02GVgM96-V0sq4_DSinqvf
+vdo 16: https://www.youtube.com/watch?v=J_Cw3G5v460&index=10&list=PL3pGy4HtqwD02GVgM96-V0sq4_DSinqvf
 ##### Types of values
 - strings are immutable, slicing of strings, concatenating strings
 - int vs float: division always produces a float
