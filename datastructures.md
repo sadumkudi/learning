@@ -27,6 +27,10 @@ print (list(set(list1) & set(list2)))
 - binary search - O(log n) for sorted arrays
 - Polynomial time algorithm
 
+### Sorting
+    - selection sort
+    - 
+
 
 
 ## Links
