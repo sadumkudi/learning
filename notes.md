@@ -1,3 +1,4 @@
+## Notes
 - compiler - translates high level programming languages to machine level instructions, generates executable code
 - interpreter - itself a prgm that runs and directly understands high level programming language
 
