@@ -9,5 +9,5 @@
 #### Udemy(s.carnatech) - 
 1. REST APIs with Flask and Python
 2. Django Core | A Reference Guide to Core Django Concepts	
-#### https://courses.learncodeonline.in - shyju.adumkudi
+#### https://courses.learncodeonline.in
 1. Javascript-for-2018-developer
