@@ -11,3 +11,4 @@
 2. Django Core | A Reference Guide to Core Django Concepts	
 #### https://courses.learncodeonline.in
 1. Javascript-for-2018-developer
+2. BackEnd web development with Django 
