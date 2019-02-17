@@ -4,6 +4,7 @@
 - python manage.py runserver
 - file struture:
   - settings.py
+  - urls.py
     - INSTALLED_APPS
     - MIDDLEWARE
     - TEMPLATES
