@@ -1,6 +1,16 @@
 ### notes
 - pip install django
 - django-admin startproject projectname
+- python manage.py runserver
+- file struture:
+  - settings.py
+    - INSTALLED_APPS
+    - MIDDLEWARE
+    - TEMPLATES
+    - DATABASES
+    - STATIC_URL
+  - urls.py
+    - 
   
   
   
