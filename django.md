@@ -1,6 +1,6 @@
 ### notes
 - pip install django
-- django-admin startproject projectname
+- django-admin startproject <projectname>
   
   
   
