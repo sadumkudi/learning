@@ -12,6 +12,10 @@
     - STATIC_URL
   - urls.py
   
+  - in app folder:
+  - admin.py
+    - configuration file for the built-in admin app
+  
   
   
   
