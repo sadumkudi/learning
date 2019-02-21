@@ -14,6 +14,8 @@
 - in app folder:
   - admin.py
     - configuration file for the built-in admin app
+  - apps.py
+  - views.py
   
   
   
