@@ -8,7 +8,7 @@
     - INSTALLED_APPS
     - MIDDLEWARE
     - TEMPLATES
-      - how templates works
+      - how templates work
     - DATABASES
     - STATIC_URL
   - urls.py
