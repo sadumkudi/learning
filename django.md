@@ -9,6 +9,7 @@
     - MIDDLEWARE
     - TEMPLATES
       - how templates work
+      - os.path.join(BASE_URL, 'templates)
     - DATABASES
     - STATIC_URL
   - urls.py
