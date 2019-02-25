@@ -18,7 +18,12 @@
     - configuration file for the built-in admin app
   - apps.py
   - views.py
-  
+  - DB migartion
+    - python manage.py migrate
+    - python manage.py makemigrations appname
+    - python manage.py migrate appname
+  - Create super user for aadmin
+    - python manage.py createsupersuser
   
   
   
