@@ -9,7 +9,7 @@
     - MIDDLEWARE
     - TEMPLATES
       - how templates work
-      - 'DIRS': [os.path.join(BASE_DIR, 'templaes')],
+      - 'DIRS': [os.path.join(BASE_DIR, 'templates')],
     - DATABASES
     - STATIC_URL
   - urls.py
