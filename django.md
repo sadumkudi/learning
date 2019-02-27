@@ -30,3 +30,4 @@
   
 ## Links
 1. https://www.youtube.com/watch?v=D6esTdOLXh4
+2. https://github.com/hiteshchoudhary/DjangoExercise1
