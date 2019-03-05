@@ -81,3 +81,4 @@ def decorator(func):
 http://www.diveintopython3.net/
 * Think Python, 2nd Edition, Allen B. Downey
 http://greenteapress.com/wp/think-python-2/
+* https://realpython.com/primer-on-python-decorators/
