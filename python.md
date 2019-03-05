@@ -58,7 +58,7 @@ print(findprime(10))
 ```
   
  ### decorators
- '''
+ ```
  import functools
 
 def decorator(func):
@@ -69,7 +69,7 @@ def decorator(func):
         # Do something after
         return value
     return wrapper_decorator
- '''   
+ ```  
   
   
   
