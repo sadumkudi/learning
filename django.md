@@ -25,7 +25,9 @@
   - Create super user for aadmin
     - python manage.py createsupersuser
   
-  
+## Questions
+1. Django follows MVC -MVT architecture. MVT  stand for Model View Template design Pattern which is little bit different from MVC (Model View Controller ) Pattern.
+2. 
   
   
 ## Links
