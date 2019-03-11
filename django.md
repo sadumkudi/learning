@@ -31,6 +31,16 @@
     - Models.py file: This file defines your data model by extending your single code line into full database tables and add a pre-built administration section to manage content.
     - Urls.py file: It uses a habitual expression to confine URL patterns for processing.
     - Views.py file: It is the main part of Django. The actual processing happens in view
+    
+3. Features available in Django web framework
+    - Admin Interface (CRUD)
+    - Templating
+    - Form handling
+    - Internationalization
+    - Session, user management, role-based permissions
+    - Object-relational mapping (ORM)
+    - Testing Framework
+    - Fantastic Documentation
   
   
 ## Links
