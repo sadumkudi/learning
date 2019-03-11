@@ -41,7 +41,13 @@
     - Object-relational mapping (ORM)
     - Testing Framework
     - Fantastic Documentation
-  
+ 4. Middlewares in Django 
+    - session management
+    - user authentication
+    - csrf
+    - security
+    - messaging
+    
   
 ## Links
 1. https://www.youtube.com/watch?v=D6esTdOLXh4
