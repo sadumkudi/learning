@@ -28,9 +28,9 @@
 ## Questions
 1. Django follows MVC -MVT architecture. MVT  stand for Model View Template design Pattern which is little bit different from MVC (Model View Controller ) Pattern.
 2. Components of Django
-  - Models.py file: This file defines your data model by extending your single code line into full database tables and add a pre-built administration section to manage content.
-  - Urls.py file: It uses a habitual expression to confine URL patterns for processing.
-  - Views.py file: It is the main part of Django. The actual processing happens in view
+    - Models.py file: This file defines your data model by extending your single code line into full database tables and add a pre-built administration section to manage content.
+    - Urls.py file: It uses a habitual expression to confine URL patterns for processing.
+    - Views.py file: It is the main part of Django. The actual processing happens in view
   
   
 ## Links
