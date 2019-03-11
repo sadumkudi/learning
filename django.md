@@ -47,6 +47,11 @@
     - csrf
     - security
     - messaging
+ 5. Signals in Django
+  Signal are inbuilt utility in Django. They allow to execute some piece of code based on some action or event is occurred in framework something like a new user register, on delete of a record. Below is the list of some inbuilt signal in Django
+    - pre_save and post_save
+    - pre_delete and post_delete
+    - pre_request and post_request 
     
   
 ## Links
