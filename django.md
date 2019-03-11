@@ -1,4 +1,4 @@
-### notes
+### Notes
 - pip install django
 - django-admin startproject projectname - new project
 - python manage.py runserver
