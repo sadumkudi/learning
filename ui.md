@@ -4,7 +4,7 @@
   - media queries
   - ``` <div class="w-100"></div> ```
   - flexbox
-    - align items, give a rowHeight
+    - align-items-, align-self-, give a rowHeight
     - justify
   
   
