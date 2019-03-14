@@ -4,8 +4,8 @@
   - media queries
   - ``` <div class="w-100"></div> ```
   - flexbox
-    - align-items-, align-self-, give a rowHeight
-    - justify
+    - align-items-start/center/end, align-self-start/center/end, give a rowHeight
+    - justify: justify-content-start/center/end/around/between
   
   
   
