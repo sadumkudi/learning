@@ -16,3 +16,4 @@
     - https://fonts.google.com/
     - https://pixabay.com
     - https://flatuicolors.com/
+    - https://www.pexels.com/
