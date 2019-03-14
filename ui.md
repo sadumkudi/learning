@@ -4,6 +4,12 @@
   - media queries
   - ``` <div class="w-100"></div> ```
   - flexbox
+    - align items, give a rowHeight
+    - justify
+  
+  
+  
+  
   ## Links
     - https://fonts.google.com/
     - https://pixabay.com
