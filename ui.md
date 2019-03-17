@@ -17,3 +17,4 @@
     - https://pixabay.com
     - https://flatuicolors.com/
     - https://www.pexels.com/
+    - https://uigradients.com/
