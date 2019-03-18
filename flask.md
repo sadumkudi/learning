@@ -11,4 +11,5 @@ def hello_world():
 if __name__ == '__main__':
     app.run()
 ```
+to run it: python hello.py - http://127.0.0.1:5000/ 
 
