@@ -1,4 +1,4 @@
-## Notes
+## Flask notes
 - hello.py
 ```
 from flask import Flask
@@ -22,7 +22,8 @@ to run it: python hello.py - http://127.0.0.1:5000/
 - URL binding
     - url_for() - function is used for dynamically building a URL for a specific function
 
-
+##### notes:
+GET - 
 
 
 
