@@ -22,7 +22,7 @@ to run it: python hello.py - http://127.0.0.1:5000/
 - URL binding
     - url_for() - function is used for dynamically building a URL for a specific function
 
-## notes:
+## notes
 - GET  - Sends data in unencrypted form to server
 - HEAD - Same as GET, but without response body
 - POST - Used to send HTML form data to server
@@ -41,5 +41,5 @@ to run it: python hello.py - http://127.0.0.1:5000/
 
 
 
-## Links:
+## Links
 1. https://www.youtube.com/watch?v=lj4I_CvBnt0
