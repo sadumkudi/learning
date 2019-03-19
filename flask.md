@@ -18,6 +18,9 @@ to run it: python hello.py - http://127.0.0.1:5000/
 - flask application is started by calling run() method
 - enable debug mode:  app.run(debug = True)
 - routing: 
+- variable rules
+- URL binding
+    - url_for() - function is used for dynamically building a URL for a specific function
 
 
 
