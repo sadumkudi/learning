@@ -13,6 +13,8 @@ if __name__ == '__main__':
 ```
 to run it: python hello.py - http://127.0.0.1:5000/ 
 
+- Werkzeug WSGI Toolkit
+- Jinja2 templating engine
 - flask application is started by calling run() method
 - enable debug mode:  app.run(debug = True)
 - routing: 
