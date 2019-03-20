@@ -20,7 +20,10 @@ to run it: python hello.py - http://127.0.0.1:5000/
 - routing: 
 - variable rules
 - URL binding
+    - The route() decorator in Flask is used to bind URL to a function
     - url_for() - function is used for dynamically building a URL for a specific function
+    - The add_url_rule() function of an application object is also available to bind a URL with a function
+        ```app.add_url_rule(‘/’, ‘hello’, hello_world)```
 
 ## notes
 - GET  - Sends data in unencrypted form to server
