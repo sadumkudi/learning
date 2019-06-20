@@ -1,5 +1,5 @@
 ## Notes
-- components - react is a component based library to build user interfaces
+- Components - react is a component based library to build user interfaces
   - components are reusable 
   - can be nested
 - JSX, Styling, Props, State, Event Handling, Lifecycle Methods, API using HTTP, Forms, 
