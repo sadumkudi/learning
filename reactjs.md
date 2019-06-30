@@ -17,3 +17,4 @@
 - https://www.youtube.com/watch?v=d7pyEDqBDeE
 - https://www.freecodecamp.org/news/here-are-the-all-the-free-coding-courses-we-launched-in-2018-ae621a74255e/
 - https://reactjs.org/docs/events.html#supported-events
+- https://reactjs.org/blog/2018/03/29/react-v-16-3.html#component-lifecycle-changes
