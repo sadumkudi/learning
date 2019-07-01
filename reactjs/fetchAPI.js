@@ -1,5 +1,6 @@
 
 // Fetch data from API
+// file name should be - App.js
 
 import React, {Component} from "react"
 
