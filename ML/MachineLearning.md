@@ -7,5 +7,5 @@
   - reinforcement learning
   - recommender system
   
-  
+  - Linear regression with one variable
 
