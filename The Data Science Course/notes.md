@@ -4,4 +4,6 @@
    - Empty sets = null sets
    - Non - empty sets
    - subset, itself, null set
-   
+ - dependent and independent events
+ - Conditional Probability
+ 
