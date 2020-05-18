@@ -1,1 +1,1 @@
- ## Probability - Bayesian Inference
+ ### Probability - Bayesian Inference
