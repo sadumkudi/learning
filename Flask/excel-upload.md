@@ -1,3 +1,4 @@
+** Notes on excel upload **
 modules installed:
   1. flask
   2. pandas
