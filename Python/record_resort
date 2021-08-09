@@ -1,0 +1,89 @@
+import os
+import time
+from csv import reader
+import re
+import sys
+import random
+
+
+if __name__ == "__main__":
+    
+    if len(sys.argv) > 1:
+        input_file = sys.argv[1]
+    else:
+        input_file = 'hosts.csv'
+
+        
+    scattered_file = open(f'resorted_{input_file}', 'w')
+    scattered_file.write(f"number,city,country,current,previous,change\n ")
+
+    siteDict = {}
+    site_cnt = 0
+    max_len = 0
+    min_len = 9999
+    record_cnt = 0
+
+    try:
+        with open(input_file, 'r') as read_obj:
+                  csv_reader = reader(read_obj)
+                  header = next(csv_reader)
+                  if header != None:
+                      for row in csv_reader:
+                          if row[1] in siteDict.keys():
+                              siteDict[row[1]].append(row)
+                          else:
+                              site_cnt = site_cnt + 1
+                              siteDict[row[1]] = []
+                              siteDict[row[1]].append(row)
+    except FileNotFoundError as fnf_err:
+        print("file not found")
+
+    #print(siteDict)
+
+    index_dict = {}
+
+    for key in siteDict:
+        if len(siteDict[key]) > max_len:
+            max_len = len(siteDict[key])
+        if len(siteDict[key]) < min_len:
+            min_len = len(siteDict[key])
+            
+        index_dict[key] = 0
+        
+
+    ratio_dict = {}
+
+    for key in siteDict:
+        ratio_dict[key] = round(len(siteDict[key]) / min_len)
+    
+    
+
+    for i in range(max_len):
+        temp_array = []
+        for key in siteDict:
+           for j in range(index_dict[key],  index_dict[key] + ratio_dict[key]): 
+                if j < len(siteDict[key]):                    
+                    index_dict[key] = j + 1                    
+                    rec = siteDict[key][j]
+                    temp_array.append(rec)
+        #print(temp_array)
+                    
+        sep = ","
+
+        random.shuffle(temp_array)
+        for rec in temp_array:
+            record = (sep.join(rec))
+            scattered_file.write(f'{record}\n')
+            record_cnt = record_cnt + 1
+        
+
+
+
+
+    print(f'no of sites={site_cnt}, max len={max_len}, total records={record_cnt}, min_len={min_len}')
+            
+                      
+                      
+                  
+                  
+
