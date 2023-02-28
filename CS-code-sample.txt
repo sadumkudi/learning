@@ -1,0 +1,71 @@
+1. To use Channel Secure Ping for authentication and limit user access based on the groups returned by the CS, you can use the Flask-Security extension in Python. Here are the steps to implement it:
+
+Install the Flask-Security extension: pip install Flask-Security
+
+
+
+
+
+2. Configure your application to use Channel Secure Ping for authentication:
+
+from flask import Flask, jsonify, request
+from flask_security import Security, PingLoginForm, current_user, login_required
+from functools import wraps
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'super-secret-key'
+app.config['SECURITY_LOGIN_USER_TEMPLATE'] = 'login.html'
+app.config['SECURITY_POST_LOGIN_VIEW'] = '/'
+app.config['SECURITY_UNAUTHORIZED_VIEW'] = '/unauthorized'
+app.config['SECURITY_PING_LOGIN_URL'] = 'https://example.com/pinglogin'
+app.config['SECURITY_PING_LOGOUT_URL'] = 'https://example.com/pinglogout'
+app.config['SECURITY_PING_CLIENT_ID'] = 'your-client-id'
+app.config['SECURITY_PING_CLIENT_SECRET'] = 'your-client-secret'
+app.config['SECURITY_PING_SCOPES'] = ['openid', 'profile', 'groups']
+app.config['SECURITY_PING_AUTH_METHOD'] = 'oauth2'
+app.config['SECURITY_PING_USER_INFO_URL'] = 'https://example.com/userinfo'
+
+def get_user_groups(user_info):
+    return user_info.get('groups', [])
+
+def group_required(*group_names):
+    def wrapper(fn):
+        @wraps(fn)
+        def decorated_view(*args, **kwargs):
+            groups = get_user_groups(current_user.user_info)
+            if not any(group in group_names for group in groups):
+                return app.login_manager.unauthorized()
+            return fn(*args, **kwargs)
+        return decorated_view
+    return wrapper
+
+security = Security(app)
+
+In this example, we configure Flask-Security to use Channel Secure Ping for authentication. We provide the Ping login and logout URLs, the client ID and secret, and the scopes we want to request, including "groups" to retrieve the user's group memberships. We also specify that we want to use OAuth2 as the authentication method and provide the user info URL.
+
+We define a helper function get_user_groups that retrieves the user's group memberships from the user info. We also define a custom decorator group_required that checks if the user is a member of at least one of the specified groups before allowing access to the view.
+
+3. Define the routes for your application, and use the @group_required decorator to restrict access based on the user's group memberships:
+
+@app.route('/')
+@login_required
+def home():
+    return 'Hello, {}!'.format(current_user.username)
+
+@app.route('/admin')
+@login_required
+@group_required('admin')
+def admin():
+    return 'Welcome, admin!'
+
+@app.route('/restricted')
+@login_required
+@group_required('restricted')
+def restricted():
+    return 'Restricted access granted.'
+	
+In this example, we define three routes: home, admin, and restricted. The home route is accessible to all authenticated users, while the admin and restricted routes require membership in the "admin" and "restricted" groups, respectively. We use the @group_required decorator to enforce these restrictions.
+
+With these steps, your application is now using Channel Secure Ping for authentication and limiting user access based on group memberships returned by the CS.
+
+
