@@ -30,3 +30,9 @@ df.to_excel(excel_writer, sheet_name='Sheet1', index=False)
 
 # Save the Excel file
 excel_writer.save()
+
+# --- 
+df['ageing_category'] = ''
+df.loc[df['duration'] < 5, 'ageing_category'] = 'minimum'
+df.loc[(df['duration'] >= 5) & (df['duration'] < 10), 'ageing_category'] = 'medium'
+df.loc[df['duration'] >= 10, 'ageing_category'] = 'maximum'
