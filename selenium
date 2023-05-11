@@ -1,0 +1,21 @@
+from selenium import webdriver
+
+# Instantiate the web driver (e.g., ChromeDriver)
+driver = webdriver.Chrome('/path/to/chromedriver')
+
+# Open a web page
+driver.get('https://www.example.com')
+
+# Interact with web elements
+search_box = driver.find_element_by_name('q')
+search_box.send_keys('Selenium')
+search_box.submit()
+
+# Extract data from the web page
+search_results = driver.find_elements_by_css_selector('.g')
+for result in search_results:
+    title = result.find_element_by_css_selector('.LC20lb')
+    print(title.text)
+
+# Close the browser
+driver.quit()
