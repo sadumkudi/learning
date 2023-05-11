@@ -1,0 +1,13 @@
+import pandas as pd
+import numpy as np
+
+# Create a sample DataFrame with a null value in column 'B'
+data = {'A': [1, 2, 3, 4, 5],
+        'B': [10, np.nan, 30, 40, 50],
+        'C': [100, 200, 300, 400, 500]}
+df = pd.DataFrame(data)
+
+# Check conditions on columns A, B, and C, and update a derived column 'Result'
+df['Result'] = df.apply(lambda row: 'Yes' if row['A'] > 2 and (pd.isnull(row['B']) or row['B'] > 30) else 'No', axis=1)
+
+print(df)
