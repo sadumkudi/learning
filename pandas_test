@@ -11,3 +11,22 @@ df = pd.DataFrame(data)
 df['Result'] = df.apply(lambda row: 'Yes' if row['A'] > 2 and (pd.isnull(row['B']) or row['B'] > 30) else 'No', axis=1)
 
 print(df)
+
+# ----------------------------------------------
+
+import pandas as pd
+
+# Create a sample DataFrame
+data = {'Name': ['John', 'Emma', 'Peter', 'Lisa'],
+        'Age': [25, 28, 30, 27],
+        'Country': ['USA', 'Canada', 'Australia', 'UK']}
+df = pd.DataFrame(data)
+
+# Create an ExcelWriter object
+excel_writer = pd.ExcelWriter('report.xlsx', engine='xlsxwriter')
+
+# Write the DataFrame to the Excel file
+df.to_excel(excel_writer, sheet_name='Sheet1', index=False)
+
+# Save the Excel file
+excel_writer.save()
