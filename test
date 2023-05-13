@@ -1,0 +1,18 @@
+import requests
+
+def getNumberOfMovies(substr):
+    url = f"https://jsonmock.hackerrank.com/api/movies/search/?Title={substr}"
+    try:
+        response = requests.get(url)
+        data = response.json()
+        total_movies = data['total']
+        return total_movies
+    except requests.exceptions.RequestException as e:
+        print("An error occurred while making the API request:", e)
+        return None
+    except KeyError:
+        print("Invalid JSON response. 'total' field not found.")
+        return None
+    except Exception as e:
+        print("An error occurred:", e)
+        return None
