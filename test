@@ -16,3 +16,15 @@ def getNumberOfMovies(substr):
     except Exception as e:
         print("An error occurred:", e)
         return None
+
+
+def countPairs(numbers, k):
+    num_set = set()
+    count = 0
+
+    for num in numbers:
+        if num - k in num_set:
+            count += 1
+        num_set.add(num)
+
+    return count
