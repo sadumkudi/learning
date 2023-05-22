@@ -45,4 +45,8 @@ df.loc[(df['Column1'] == 'Yes') & (df['identified_date'].isnull()), 'identified_
 
 grouped_df = df.groupby('Category').agg({'Column1': 'count', 'Column2': 'count'})
 
+# Group by 'Category' and count occurrences of 'Yes' in 'Column1' and 'Column2'
+grouped_df = df.groupby('Category')['Column1', 'Column2'].apply(lambda x: (x == 'Yes').sum())
+
+
 
