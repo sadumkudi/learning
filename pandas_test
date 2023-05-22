@@ -36,3 +36,8 @@ df['ageing_category'] = ''
 df.loc[df['duration'] < 5, 'ageing_category'] = 'minimum'
 df.loc[(df['duration'] >= 5) & (df['duration'] < 10), 'ageing_category'] = 'medium'
 df.loc[df['duration'] >= 10, 'ageing_category'] = 'maximum'
+
+# -------
+
+
+df['difference_days'] = df.apply(lambda row: (row['date2'] - row['date1']).days if row['flag'] == 'yes' else None, axis=1)
