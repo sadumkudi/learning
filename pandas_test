@@ -41,3 +41,6 @@ df.loc[df['duration'] >= 10, 'ageing_category'] = 'maximum'
 
 
 df['difference_days'] = df.apply(lambda row: (row['date2'] - row['date1']).days if row['flag'] == 'yes' else None, axis=1)
+df.loc[(df['Column1'] == 'Yes') & (df['identified_date'].isnull()), 'identified_date'] = current_date
+
+
