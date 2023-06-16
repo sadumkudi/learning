@@ -1,0 +1,19 @@
+from selenium import webdriver
+
+# Set up the Chrome driver
+driver = webdriver.Chrome()
+
+# Navigate to the webpage containing the widgets
+driver.get("https://www.example.com")
+
+# Find all widget elements on the screen
+widget_elements = driver.find_elements_by_class_name("widget")
+
+# Get the count of widget elements
+widget_count = len(widget_elements)
+
+# Print the count of widgets
+print(f"Number of widgets: {widget_count}")
+
+# Close the browser
+driver.quit()
