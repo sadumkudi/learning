@@ -17,3 +17,7 @@ print(f"Number of widgets: {widget_count}")
 
 # Close the browser
 driver.quit()
+
+
+
+//div[@class='your-class-name']//div[text()='Your Text']
