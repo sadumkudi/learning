@@ -55,6 +55,25 @@ pivot_table.loc['Grand Total'] = pivot_table.sum()
 pivot_table.columns = [col if isinstance(col, str) else f"{col[1]} {col[0]}" for col in pivot_table.columns]
 print(pivot_table)
 
+# ----------------------
+
+import pandas as pd
+data = {
+    'Managed by group _name': ['CPT-CPG-BUILDINGMGMTSYSTEMS', 'CPT-CPG-CORPSEC-ALARMS', 'CPT-CPG-CORPSEC-PHYSICALACCESS', 'CPT-CPG-CORPSEC-VIDEOSURVL'],
+    'State / Sub State Discrepant': [1, 2, 2, 31],
+    'itam_cmp_discrepant': [58, 82, 81, 2003],
+    'Lifecycle_ Aging_Tasks': [5, 13, 35, 515],
+    'ITAM_Missing_IP_and_MAC': [1, 1, 0, 9]
+}
+
+df = pd.DataFrame(data)
+
+summary_row = df.sum(numeric_only=True)
+
+summary_row['Managed by group _name'] = 'Summary'
+
+df = df.append(summary_row, ignore_index=True)
+df.to_csv('test.csv')
 
 
 
