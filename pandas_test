@@ -48,5 +48,14 @@ grouped_df = df.groupby('Category').agg({'Column1': 'count', 'Column2': 'count'}
 # Group by 'Category' and count occurrences of 'Yes' in 'Column1' and 'Column2'
 grouped_df = df.groupby('Category')['Column1', 'Column2'].apply(lambda x: (x == 'Yes').sum())
 
+# -----------------
+
+pivot_table = df.pivot_table(index='managed_by_group', columns='name', aggfunc=len, fill_value=0)
+pivot_table.loc['Grand Total'] = pivot_table.sum()
+pivot_table.columns = [col if isinstance(col, str) else f"{col[1]} {col[0]}" for col in pivot_table.columns]
+print(pivot_table)
+
+
+
 
 
