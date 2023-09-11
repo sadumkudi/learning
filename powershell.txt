@@ -1,0 +1,26 @@
+(* # Define the path to your configuration file
+#$configFilePath = "C:\Path\To\config.json"
+
+# Check if the configuration file exists
+if (Test-Path $configFilePath) {
+    # Read the content of the JSON file
+    $configContent = Get-Content -Path $configFilePath -Raw
+
+    # Parse the JSON content into a PowerShell object
+    $configObject = ConvertFrom-Json -InputObject $configContent
+
+    # Access configuration values
+    $serverName = $configObject.ServerName
+    $port = $configObject.Port
+    $username = $configObject.Username
+    $password = $configObject.Password
+
+    # You can now use these variables in your script
+    Write-Host "Server Name: $serverName"
+    Write-Host "Port: $port"
+    Write-Host "Username: $username"
+    Write-Host "Password: $password"
+} else {
+    Write-Host "Configuration file not found at $configFilePath"
+}
+ *)
