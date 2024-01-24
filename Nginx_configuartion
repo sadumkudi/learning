@@ -1,0 +1,56 @@
+1. Install Nginx
+sudo apt update
+sudo apt install nginx
+
+2. Install Gunicorn or uWSGI
+Gunicorn or uWSGI acts as the WSGI server that will interface with your Django app. You can install Gunicorn with pip
+pip install gunicorn
+
+3. Prepare Your Django Application
+
+4. Configure Gunicorn/uWSGI
+gunicorn --workers 3 myproject.wsgi:application  - This command starts Gunicorn on the default port (8000) with 3 worker processes.
+
+5. Configure Nginx
+Create a new Nginx server block configuration or edit the default one in /etc/nginx/sites-available/. Here is a basic example:
+server {
+    listen 80;
+    server_name your_domain_or_IP;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /path/to/your/static/files;
+    }
+
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+Update server_name to your domain or IP address.
+Update /path/to/your/static/files to the location where you ran collectstatic.
+proxy_pass should point to the address where Gunicorn is running (e.g., http://localhost:8000).
+
+6. Enable the Configuration
+Link your configuration file from sites-available to sites-enabled:
+sudo ln -s /etc/nginx/sites-available/your_file /etc/nginx/sites-enabled
+Replace your_file with the name of your configuration file.
+
+7. Test and Restart Nginx
+sudo nginx -t
+sudo systemctl restart nginx
+
+8. Adjust the Firewall (If Necessary)
+If you have a firewall enabled, make sure to allow traffic on Nginx. 
+
+9. Further Configuration
+For a production environment, consider setting up SSL/TLS with Let's Encrypt.
+You might also want to configure Nginx to handle more traffic by tuning its settings.
+Make sure your Django settings are properly configured for production.
+
+
+
