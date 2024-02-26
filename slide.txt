@@ -1,0 +1,21 @@
+Slide 1: Introduction to DDI API Gateway
+Title: DDI API Gateway
+Subtitle: Bridging DDI Clients to Multi-Vendor Applications
+Project Objective: Develop an API Gateway to serve as a unified interface for DDI clients, facilitating interaction with various vendor applications like Infoblox through their API endpoints.
+Background/Context:
+Current direct access to vendor APIs by DDI's clients hinders scalability and vendor flexibility.
+Direct access increases the risk of DDoS attacks due to potential overburdening of vendor APIs.
+Proposed Solution:
+Introduce a multi-vendor supported, scalable API gateway.
+Incorporate role-based authentication and integration with enterprise-wide tools (EPL, Apigee, API Store).
+Ensure the solution is cloud-ready, enhancing overall system resilience and scalability.
+Slide 2: Implementation Highlights & Security Measures
+Title: Implementation Progress & Security Focus
+Implementation Progress:
+Development and UAT environments established.
+Integration with Apigee for serving API endpoints securely.
+Enterprise pipeline deployment to streamline updates and maintenance.
+Security Measures:
+Password security enhanced through Enterprise Password Vault integration, with certificate-based retrieval.
+Communication security ensured with SSL/TLS certificates, safeguarding data in transit.
+Conclusion: The DDI API Gateway project is underway, showcasing significant progress in development, security, and enterprise integration. This strategic initiative is set to revolutionize how DDI clients access and interact with vendor APIs, ensuring scalability, flexibility, and enhanced security.
