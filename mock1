@@ -1,0 +1,40 @@
+import unittest
+from unittest.mock import patch, MagicMock
+import os
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
+import requests
+
+# Mock the function can_force_ipv4. You need to replace 'yourmodule' with the actual module name where can_force_ipv4 is defined.
+@patch('yourmodule.can_force_ipv4', return_value={'force': True})
+# Mock os.environ to provide environment variables for the test
+@patch.dict(os.environ, {
+    'CERT_FILE_DIR': '/mock/path/to',
+    'CCP_URL': 'https://mocked-url.com',
+    'EPV_APP_ID': 'mocked-app-id',
+    'SAFE': 'mocked-safe'
+})
+class TestPasswordCyberVault(unittest.TestCase):
+
+    # Test the successful API call scenario
+    @patch('yourmodule.requests.Session')
+    def test_password_cybervault_success(self, mock_session, mock_can_force_ipv4):
+        # Setup the mock response
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {'Content': 'mocked-content'}
+        
+        # Configure the mock session to return the mock response
+        mock_session.return_value.__enter__.return_value.get.return_value = mock_response
+        
+        # Call the function under test
+        from yourmodule import password_cybervault  # Import here to use patched environment
+        result = password_cybervault('mocked-user-name')
+        
+        # Assertions
+        self.assertEqual(result, {'Content': 'mocked-content'})
+
+    # Add more tests here for different scenarios like failure in API call, unable to force IPv4, etc.
+
+if __name__ == '__main__':
+    unittest.main()
