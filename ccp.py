@@ -32,3 +32,34 @@ def get_cb_data(url, auth):
     except Exception as e:
         # Handle other errors such as parsing JSON
         return json.dumps({"error": f"An error occurred: {str(e)}"})
+
+#------------------------
+
+
+import requests
+import json
+
+def get_cyberark_password(url):
+    """
+    Retrieve password from CyberArk CCP endpoint.
+
+    :param url: The CCP endpoint URL.
+    :return: A JSON string containing the password or an error message.
+    """
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Check for HTTP request errors
+        
+        data = response.json()
+        if "Content" in data:
+            return json.dumps({"Content": data["Content"]})
+        else:
+            return json.dumps({"error": "Password key not found in the response"})
+    except requests.RequestException:
+        return json.dumps({"error": "Failed to retrieve password"})
+    except ValueError:  # Includes JSON decoding error
+        return json.dumps({"error": "Error processing the response data"})
+
+# Example usage:
+# url = "https://your-cyberark-ccp-endpoint-url"
+# print(get_cyberark_password(url))
