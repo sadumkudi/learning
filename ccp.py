@@ -1,65 +1,30 @@
-def get_cb_data(url, auth):
-    """
-    Retrieve password from CyberArk CCP endpoint.
-
-    :param url: The CCP endpoint URL.
-    :param auth: Authentication details required by the endpoint.
-    :return: A JSON string containing the password.
-    """
-    try:
-        response = requests.get(url, auth=auth, verify=True)  # 'verify' parameter for SSL certification verification
-        response.raise_for_status()  # Raises stored HTTPError, if one occurred.
-
-        # Assuming the password is returned in the response's content in a way that it can be directly parsed
-        data = response.json()
-        if "Content" in data:
-            return json.dumps({"Content": data["Content"]})
-        else:
-            return json.dumps({"error": "Password key not found in the response"})
-
-    except requests.exceptions.HTTPError as http_err:
-        # Specific errors for HTTP issues
-        return json.dumps({"error": f"HTTP error occurred: {http_err}"})
-    except requests.exceptions.ConnectionError as conn_err:
-        # Handle connection errors
-        return json.dumps({"error": f"Connection error occurred: {conn_err}"})
-    except requests.exceptions.Timeout as timeout_err:
-        # Handle requests that took too long
-        return json.dumps({"error": f"Timeout error occurred: {timeout_err}"})
-    except requests.exceptions.RequestException as req_err:
-        # Handle ambiguous requests exceptions
-        return json.dumps({"error": f"Request exception occurred: {req_err}"})
-    except Exception as e:
-        # Handle other errors such as parsing JSON
-        return json.dumps({"error": f"An error occurred: {str(e)}"})
-
-#------------------------
-
-
-import requests
 import json
 
-def get_cyberark_password(url):
+def process_password_request(url):
     """
-    Retrieve password from CyberArk CCP endpoint.
+    Call get_cyberark_password and handle the response.
 
     :param url: The CCP endpoint URL.
-    :return: A JSON string containing the password or an error message.
     """
-    try:
-        response = requests.get(url)
-        response.raise_for_status()  # Check for HTTP request errors
-        
-        data = response.json()
-        if "Content" in data:
-            return json.dumps({"Content": data["Content"]})
-        else:
-            return json.dumps({"error": "Password key not found in the response"})
-    except requests.RequestException:
-        return json.dumps({"error": "Failed to retrieve password"})
-    except ValueError:  # Includes JSON decoding error
-        return json.dumps({"error": "Error processing the response data"})
+    # Call the function and capture the response
+    response_json = get_cyberark_password(url)
+    response_data = json.loads(response_json)
+    
+    # Check if the response contains an error
+    if "error" in response_data:
+        # Handle the error (e.g., log it, raise an exception, etc.)
+        print(f"Error retrieving password: {response_data['error']}")
+        # Depending on your application's requirements, you might want to raise an exception here
+        # raise Exception(f"Error retrieving password: {response_data['error']}")
+    elif "Content" in response_data:
+        # Process the password content as needed
+        password = response_data["Content"]
+        print("Password retrieved successfully:", password)
+        # Continue with your application logic here
+    else:
+        # Handle unexpected response format
+        print("Unexpected response format received from the CCP endpoint.")
 
 # Example usage:
-# url = "https://your-cyberark-ccp-endpoint-url"
-# print(get_cyberark_password(url))
+# Replace 'your_ccp_endpoint_url' with the actual URL you intend to use.
+# process_password_request('your_ccp_endpoint_url')
