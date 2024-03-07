@@ -1,35 +1,31 @@
-from unittest import TestCase, mock
-from unittest.mock import patch
-from .utils import can_force_ipv4  # Adjust the import path according to your project structure
-
-class CanForceIPv4Test(TestCase):
-    @mock.patch('requests.packages.urllib3.connectionpool.HTTPConnection')
-    @mock.patch('requests.packages.urllib3.connectionpool.VerifiedHTTPSConnection')
-    @mock.patch('requests.packages.urllib3.connectionpool.HTTPConnectionPool')
-    @mock.patch('requests.packages.urllib3.connectionpool.HTTPSConnectionPool')
-    def test_can_force_ipv4_patches_classes(self, mock_https_pool, mock_http_pool, mock_verified_https, mock_http):
-        result = can_force_ipv4()
-        self.assertTrue(result['force'])
-        # Since your function replaces classes, verify that a simple assignment check suffices.
-        # In reality, you're asserting the mock is called which stands in place of your actual class replacement logic.
-        # This part of the test somewhat deviates from directly asserting class replacements due to the nature of patching.
-        # Additional, more intricate mocks and assertions might be needed depending on the specifics of how your application uses these patched connections.
-## ----------------------
-
-from django.test import TestCase
+import unittest
 from unittest.mock import patch, MagicMock
-from .utils import can_force_ipv4  # Adjust the import path according to your project structure
+from your_module import fetch_credentials  # Adjust this import based on your actual file structure
 
-class CanForceIPv4Test(TestCase):
-    def test_can_force_ipv4_success(self):
-        # Test the function under normal conditions
-        result = can_force_ipv4()
-        self.assertEqual(result, {"force": True})
+class TestFetchCredentials(unittest.TestCase):
+    @patch('your_module.requests.get')
+    def test_fetch_credentials_success(self, mock_get):
+        mock_get.return_value = MagicMock(status_code=200, json=lambda: {"password": "secret"})
+        result = fetch_credentials("testuser")
+        self.assertEqual(result, {"Content": "secret"})
 
-    @patch('path.to.your.utils.socket.socket')
-    def test_can_force_ipv4_exception(self, mock_socket):
-        # Force an exception to be raised
-        mock_socket.side_effect = Exception("Forced exception for test")
+    @patch('your_module.requests.get')
+    def test_user_not_found(self, mock_get):
+        mock_get.return_value = MagicMock(status_code=404)
+        result = fetch_credentials("nonexistentuser")
+        self.assertEqual(result, {"Error": "User not found"})
 
-        result = can_force_ipv4()
-        self.assertEqual(result, {"force": False})
+    @patch('your_module.requests.get')
+    def test_http_error(self, mock_get):
+        mock_get.side_effect = requests.HTTPError("Internal Server Error", response=MagicMock(status_code=500))
+        result = fetch_credentials("testuser")
+        self.assertTrue("Error" in result)
+
+    @patch('your_module.requests.get')
+    def test_generic_exception(self, mock_get):
+        mock_get.side_effect = Exception("Generic Error")
+        result = fetch_credentials("testuser")
+        self.assertTrue("Error" in result)
+
+if __name__ == '__main__':
+    unittest.main()
