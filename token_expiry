@@ -1,0 +1,40 @@
+from datetime import datetime, timezone
+import time
+
+def is_token_expiring_soon(issued_at_ms, expires_in_seconds):
+    """
+    Checks if the token is expiring within the next 5 minutes.
+
+    Parameters:
+    issued_at_ms (int): The timestamp when the token was issued, in milliseconds.
+    expires_in_seconds (int): The duration in seconds after which the token expires.
+
+    Returns:
+    bool: True if the token is expiring within the next 5 minutes, False otherwise.
+    """
+    # Current time in seconds
+    current_timestamp = time.time()
+    
+    # Convert issued_at from milliseconds to seconds
+    issued_at_seconds = issued_at_ms / 1000
+    
+    # Calculate expiration time
+    expiration_timestamp = issued_at_seconds + expires_in_seconds
+    
+    # Determine if the token is expiring in the next 5 minutes
+    time_until_expiration = expiration_timestamp - current_timestamp
+    
+    # 5 minutes = 300 seconds
+    if time_until_expiration > 0 and time_until_expiration <= 300:
+        return True
+    else:
+        return False
+
+# Example usage
+issued_at_ms = 1710954153000  # Replace with actual issued_at timestamp in milliseconds
+expires_in_seconds = 3600  # Replace with actual expires_in duration in seconds
+
+if is_token_expiring_soon(issued_at_ms, expires_in_seconds):
+    print("The token is expiring within the next 5 minutes.")
+else:
+    print("The token is not expiring within the next 5 minutes.")
