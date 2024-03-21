@@ -1,0 +1,19 @@
+except requests.exceptions.HTTPError as http_err:
+        logging.error(f"HTTP error occurred: {http_err} - Status: {http_err.response.status_code}")
+        return {"error": "HTTP error", "details": str(http_err), "status": http_err.response.status_code}
+    except requests.exceptions.ConnectionError as conn_err:
+        logging.error(f"Connection error occurred: {conn_err}")
+        return {"error": "Connection error", "details": str(conn_err)}
+    except requests.exceptions.Timeout as timeout_err:
+        logging.error(f"Timeout error occurred: {timeout_err}")
+        return {"error": "Timeout error", "details": str(timeout_err)}
+    except requests.exceptions.RequestException as req_err:
+        logging.error(f"Unexpected error occurred: {req_err}")
+        return {"error": "Unexpected error", "details": str(req_err)}
+    except Exception as e:
+        logging.error(f"An unexpected error occurred: {e}")
+        return {"error": "General error", "details": str(e)}
+
+# Example usage
+# response = api_call_wrapper('GET', 'https://example.com/api/resource', params={'key': 'value'})
+# print(response)
